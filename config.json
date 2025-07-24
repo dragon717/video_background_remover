@@ -1,0 +1,141 @@
+{
+  "default_settings": {
+    "model_name": "u2net",
+    "max_frames": null,
+    "create_webm": true,
+    "output_quality": "high",
+    "log_level": "INFO"
+  },
+  "models": {
+    "u2net": {
+      "name": "U2-Net",
+      "description": "通用背景移除模型，适合大多数场景",
+      "speed": "medium",
+      "quality": "high",
+      "memory_usage": "medium",
+      "recommended_for": ["general", "objects", "animals"]
+    },
+    "u2netp": {
+      "name": "U2-Net (轻量版)",
+      "description": "轻量版U2-Net，处理速度更快",
+      "speed": "fast",
+      "quality": "medium",
+      "memory_usage": "low",
+      "recommended_for": ["quick_processing", "low_memory"]
+    },
+    "u2net_human_seg": {
+      "name": "U2-Net 人物分割",
+      "description": "专门针对人物优化的模型",
+      "speed": "medium",
+      "quality": "very_high",
+      "memory_usage": "medium",
+      "recommended_for": ["human", "portrait", "people"]
+    },
+    "isnet-general-use": {
+      "name": "ISNet 通用",
+      "description": "高精度通用背景移除模型",
+      "speed": "slow",
+      "quality": "very_high",
+      "memory_usage": "high",
+      "recommended_for": ["high_quality", "professional"]
+    },
+    "silueta": {
+      "name": "Silueta",
+      "description": "轮廓检测模型，适合简单背景",
+      "speed": "fast",
+      "quality": "medium",
+      "memory_usage": "low",
+      "recommended_for": ["simple_background", "silhouette"]
+    }
+  },
+  "performance_presets": {
+    "fast": {
+      "model": "u2netp",
+      "max_frames": 300,
+      "create_webm": false,
+      "description": "快速处理模式，适合预览和测试"
+    },
+    "balanced": {
+      "model": "u2net",
+      "max_frames": null,
+      "create_webm": true,
+      "description": "平衡模式，质量和速度兼顾"
+    },
+    "quality": {
+      "model": "isnet-general-use",
+      "max_frames": null,
+      "create_webm": true,
+      "description": "高质量模式，追求最佳效果"
+    },
+    "human": {
+      "model": "u2net_human_seg",
+      "max_frames": null,
+      "create_webm": true,
+      "description": "人物专用模式，适合人物视频"
+    }
+  },
+  "file_formats": {
+    "supported_input": [".mp4", ".avi", ".mov", ".mkv", ".wmv", ".flv", ".webm"],
+    "supported_image": [".jpg", ".jpeg", ".png", ".bmp", ".tiff"],
+    "output_video": [".mp4", ".webm"],
+    "output_image": ".png"
+  },
+  "processing_limits": {
+    "max_resolution": {
+      "width": 3840,
+      "height": 2160,
+      "description": "最大支持4K分辨率"
+    },
+    "recommended_memory_gb": {
+      "minimum": 4,
+      "recommended": 8,
+      "optimal": 16
+    },
+    "batch_processing": {
+      "max_concurrent": 1,
+      "auto_cleanup": true,
+      "progress_reporting": true
+    }
+  },
+  "output_settings": {
+    "video_codec": {
+      "mp4": "mp4v",
+      "webm": "libvpx-vp9"
+    },
+    "compression": {
+      "quality": 90,
+      "optimize": true
+    },
+    "naming_convention": {
+      "output_video": "output_transparent",
+      "frames_folder": "frames",
+      "processed_frames_folder": "processed_frames",
+      "reports_folder": "reports"
+    }
+  },
+  "ui_settings": {
+    "theme": "default",
+    "language": "zh-CN",
+    "auto_open_output": true,
+    "show_progress_details": true,
+    "remember_last_settings": true
+  },
+  "advanced_options": {
+    "gpu_acceleration": {
+      "enabled": "auto",
+      "fallback_to_cpu": true
+    },
+    "memory_optimization": {
+      "chunk_processing": true,
+      "cleanup_temp_files": true,
+      "max_memory_usage_percent": 80
+    },
+    "error_handling": {
+      "retry_failed_frames": true,
+      "skip_corrupted_frames": true,
+      "detailed_error_logs": true
+    }
+  },
+  "version": "1.0.0",
+  "last_updated": "2024-01-01"
+}
