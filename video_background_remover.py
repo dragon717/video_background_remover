@@ -180,9 +180,6 @@ class VideoBackgroundRemover:
                 pbar.update(1)
         
         logger.info(f"成功处理 {len(processed_frames)} 帧")
-        """ 倒序接着插入帧 """
-        reversed_original_frames = frames_list[::-1]  
-        processed_frames += reversed_original_frames  # 追加到已处理帧末尾
 
         return processed_frames
     
