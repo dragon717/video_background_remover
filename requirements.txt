@@ -1,11 +1,11 @@
 # 视频抠图工具依赖包
-opencv-python==4.8.1.78
-numpy==1.24.3
-Pillow==10.0.1
-rembg==2.0.50
-torch==2.1.0
-torchvision==0.16.0
-onnxruntime==1.16.1
-tqdm==4.66.1
-click==8.1.7
-colorlog==6.7.0
+opencv-python>=4.9.0.80
+numpy>=1.26.0
+Pillow>=10.0.0
+rembg>=2.0.50
+torch>=2.1.0
+torchvision>=0.16.0
+onnxruntime>=1.16.1
+tqdm>=4.66.1
+click>=8.1.7
+colorlog>=6.7.0
